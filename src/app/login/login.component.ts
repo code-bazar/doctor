@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
   submitted = false;
   
   onSubmit() { 
-    this.router.navigateByUrl('/home');
+    this.router.navigate(['/home']);
   }
   
   ngOnInit(): void {
@@ -29,4 +29,4 @@ export class LoginComponent implements OnInit {
       password: ['']
     });
   }
-}
+  }
