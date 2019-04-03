@@ -4,20 +4,3 @@
 .head {
   background-color: aqua;
 }
-.btn-primary {
-  background-color: #d4edda;
-  border-color: #c3e6cb;
-  color: #155724;
-}
-.btn-primary:hover {
-  background-color: #d4eddabb;
-  border-color: #c3e6cbb0;
-  color: #0a2b12;
-}
-#notLogged {
-  position: absolute;
-  margin-left: auto;
-  margin-right: auto;
-  left: 0;
-  right: 0;
-}

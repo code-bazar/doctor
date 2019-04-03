@@ -1,5 +1,5 @@
 <div class="container" [hidden]="submitted">
-    <form [formGroup]="form" (submit)="onSubmit()">
+    <form [formGroup]="form" (submit)="onSubmit()" class="col-md-5">
       <div class="form-group">
         <label>Name</label>
         <input type="text" class="form-control" id="name" required formControlName="name">
@@ -9,8 +9,10 @@
         <label>Password</label>
         <input type="text" class="form-control" id="password" formControlName="password">
       </div>
- 
-      <button type="submit" class="btn btn-success">Submit</button>
+      
+      <div class="button">
+        <button type="submit" class="btn btn-success col-md-5">Submit</button>
+      </div>
  
     </form>
 </div>

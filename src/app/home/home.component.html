@@ -1,3 +1,38 @@
-<p>
-  home works!
-</p>
+<div class="container" [hidden]="submitted">
+  <form [formGroup]="form" (submit)="onSubmit()" class="col-md-8">
+    <div class="form-group">
+      <label>Start Date</label>
+      <input type="text" class="form-control" id="dateFrom" required formControlName="dateFrom">
+    </div>
+
+    <div class="form-group">
+      <label>End Date</label>
+      <input type="text" class="form-control" id="dateTo" required formControlName="dateTo">
+    </div>
+
+    <div class="form-group">
+      <label>Town</label>
+      <input type="text" class="form-control" id="town" required formControlName="town">
+    </div>
+
+    <div class="form-group">
+      <label>Specialist</label>
+      <input type="text" class="form-control" id="specialist" required formControlName="specialist">
+    </div>
+
+    <div class="form-group">
+      <label>Specialist First Name</label>
+      <input type="text" class="form-control" id="specialistFirstName" required formControlName="specialistFirstName">
+    </div>
+
+    <div class="form-group">
+      <label>SpecialistLastName</label>
+      <input type="text" class="form-control" id="specialistLastName" required formControlName="specialistLastName">
+    </div>
+
+    <div class="button">
+      <button type="submit" class="btn btn-success col-md-5">Submit</button>
+    </div>
+
+  </form>
+</div>

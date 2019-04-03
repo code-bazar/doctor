@@ -12,17 +12,17 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class LoginComponent implements OnInit {
   user: User;
   form: FormGroup;
-  
+
   constructor(private formBuilder: FormBuilder, private userService: UserService, private router: Router) {
     this.user = userService.user;
   }
-  
+
   submitted = false;
-  
-  onSubmit() { 
+
+  onSubmit() {
     this.router.navigate(['/home']);
   }
-  
+
   ngOnInit(): void {
     this.form = this.formBuilder.group({
       name: [''],
