@@ -1,13 +1,13 @@
-<div class="container" [hidden]="submitted">
+<div class="container">
   <form [formGroup]="form" (submit)="onSubmit()" class="col-md-8">
     <div class="form-group">
       <label>Start Date</label>
-      <input type="text" class="form-control" id="dateFrom" required formControlName="dateFrom">
+      <input type="date" class="form-control" id="dateFrom" required formControlName="dateFrom">
     </div>
 
     <div class="form-group">
       <label>End Date</label>
-      <input type="text" class="form-control" id="dateTo" required formControlName="dateTo">
+      <input type="date" class="form-control" id="dateTo" required formControlName="dateTo">
     </div>
 
     <div class="form-group">
@@ -26,7 +26,7 @@
     </div>
 
     <div class="form-group">
-      <label>SpecialistLastName</label>
+      <label>Specialist Last Name</label>
       <input type="text" class="form-control" id="specialistLastName" required formControlName="specialistLastName">
     </div>
 
