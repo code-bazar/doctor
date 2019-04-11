@@ -15,9 +15,7 @@ export class HomeComponent {
   requestForm: RequestForm;
   form: FormGroup;
   
-  constructor(private formBuilder: FormBuilder, private userService: UserService, private router: Router) {
-    this.user = userService.user;
-  }
+  constructor(private formBuilder: FormBuilder, private userService: UserService, private router: Router) {  }
   
   onSubmit() {
     // TODO: 
