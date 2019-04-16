@@ -15,7 +15,7 @@ form {
     right: 0;
 }
 label {
-    color: $theme-text-color;
+    color: black;
     margin-left: 0.6rem;
 }
 .form-control:focus {
@@ -31,12 +31,12 @@ label {
 .btn-success:hover {
     background-color: $btn-hover-color;
     border-color: $theme-border-color;
-    color: white;
+    color: $theme-text-color;
 }
 .btn-success:active, 
 .btn-success:not(:disabled):not(.disabled).active, 
 .btn-success:not(:disabled):not(.disabled):active {
     background-color: $btn-active-color;
     border-color: $theme-border-color;
-    color: $theme-color;
+    color: $theme-text-color;
 }
