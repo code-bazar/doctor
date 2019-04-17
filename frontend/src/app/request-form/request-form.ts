@@ -1,11 +1,11 @@
 export class RequestForm {
     constructor(
         public id,
-        dateFrom: string,
-        dateTo: string,
-        town: string,
-        specialist: string,
-        specialistFirstName: string,
-        specialistLastName: string
+        public dateFrom: string,
+        public dateTo: string,
+        public town: string,
+        public specialist: string,
+        public specialistFirstName: string,
+        public specialistLastName: string
     ) { }
 }
