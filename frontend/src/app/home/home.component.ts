@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../User/User';
 import { FormGroup, FormBuilder } from '@angular/forms';
-import { UserService } from '../user/user.service';
+import { RequestFormService } from '../request-form/request-form.service';
 import { Router } from '@angular/router';
 import { RequestForm } from '../request-form/request-form';
 
@@ -10,19 +10,36 @@ import { RequestForm } from '../request-form/request-form';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
   user: User;
-  requestForm: RequestForm;
   form: FormGroup;
-  
-  constructor(private formBuilder: FormBuilder, private userService: UserService, private router: Router) {  }
-  
+  requestForm: RequestForm = new RequestForm('', '', '', '', '', '', '');
+
+  constructor(private formBuilder: FormBuilder,
+    private requestFormService: RequestFormService,
+    private router: Router) { }
+
   onSubmit() {
-    // TODO: 
-    console.log(this.form.value["town"])
-    this.router.navigate(['/home']);
+    this.requestForm.dateFrom = this.form.value.dateFrom;
+    this.requestForm.dateTo = this.form.value.dateTo;
+    this.requestForm.town = this.form.value.town;
+    this.requestForm.specialist = this.form.value.specialist;
+    this.requestForm.specialistFirstName = this.form.value.specialistFirstName;
+    this.requestForm.specialistLastName = this.form.value.specialistLastName;
+
+    this.requestFormService.addReservation(this.requestForm)
+      .pipe()
+      .subscribe(data => {
+        console.log("Data");
+        console.log(data);
+        this.router.navigate(['/home']);
+      },
+        error => {
+          console.error("ERROR: ");
+          console.error(error);
+        });
   }
-  
+
   ngOnInit(): void {
     this.form = this.formBuilder.group({
       dateFrom: [''],
